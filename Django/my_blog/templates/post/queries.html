@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>10 prrimeros saltando los 5 primeros</h3>
+    <ul>
+        {%for autor in offset %}
+        <li>{{autor.name}} | {{autor.email}}</li>
+        {% endfor %}
+    </ul>
+    <h3>10 primeros elementos</h3>
+    <ul>
+        {%for autor in limit %}
+        <li>{{autor.name}} | {{autor.email}}</li>
+        {% endfor %}
+    </ul>
+    <h3>autor unico y diferente</h3>
+    <ul>
+        <li>{{autor.name}}|{{autor.email}}</li>
+    </ul>
+    <h3>Buscando autor donde email sea igual a andersonmary@example.net</h3>
+    <ul>
+        {% for email in filtered %}
+        <li>{{email.name}}|{{email.email}}</li>
+        {% endfor %}
+    </ul>
+    <h3> Todos los autores</h3>
+    <ul>
+        {% for autor in autores %}
+        <li>{{autor.name}} ({{autor.email }})</li>
+        {% endfor %}
+    </ul>
+    <h3> Total autores: {{ autores|length }}</h3>
+</body>
+</html>

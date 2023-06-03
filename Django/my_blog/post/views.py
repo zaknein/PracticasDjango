@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import Autor, Entrada
+from django.http import HttpResponse
 
 
 def queries(req):
+
     # obtener todos los elementos
     autores = Autor.objects.all()
     
@@ -32,3 +34,11 @@ def queries(req):
 
     filtro3 = Autor.objects.filter(name__contains="yes")
     return render(req,'post/queries.html',{'filtro3': filtro3 ,'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset, 'orden':orden, 'filtrados': filtrados})
+
+
+def actualizar(request):
+    autor = Autor.objects.get(id=1)
+    autor.name = "pablo"
+    autor.email ="pablo@pablo.com"
+    autor.save()
+    return HttpResponse("modificado")

@@ -24,4 +24,8 @@ def queries(req):
     #  Obtener todos los elementos ordenados 
 
     orden = Autor.objects.all().order_by('email')
-    return render(req,'post/queries.html',{'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset, 'orden':orden})
+
+    # obrener todos los elementos de id menor o igual a 15
+
+    filtrados = Autor.objects.filter(id__lte=15)
+    return render(req,'post/queries.html',{'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset, 'orden':orden, 'filtrados': filtrados})

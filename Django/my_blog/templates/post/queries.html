@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>id menor o igual a 15</h3>
+    <ul>
+        {% for mail in filtrados%}
+        <li>{{mail.name}} | {{mail.email}}</li>
+        {% endfor %}
+    </ul>
     <h3>Elementos ordenados por email</h3>
     <ul>
         {% for mail in orden%}

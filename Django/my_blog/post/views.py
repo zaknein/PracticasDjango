@@ -20,4 +20,8 @@ def queries(req):
     # obtener los 10 primeros saltando los primeros 5
      
     offset =Autor.objects.all()[5:10]
-    return render(req,'post/queries.html',{'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset})
+
+    #  Obtener todos los elementos ordenados 
+
+    orden = Autor.objects.all().order_by('email')
+    return render(req,'post/queries.html',{'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset, 'orden':orden})

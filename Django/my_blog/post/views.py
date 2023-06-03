@@ -28,4 +28,7 @@ def queries(req):
     # obrener todos los elementos de id menor o igual a 15
 
     filtrados = Autor.objects.filter(id__lte=15)
-    return render(req,'post/queries.html',{'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset, 'orden':orden, 'filtrados': filtrados})
+    # obtener todos los que contienen palabra yes en su nombre
+
+    filtro3 = Autor.objects.filter(name__contains="yes")
+    return render(req,'post/queries.html',{'filtro3': filtro3 ,'autores': autores, 'filtered' : filtered, 'autor': autor, 'limit': limit, 'offset':offset, 'orden':orden, 'filtrados': filtrados})

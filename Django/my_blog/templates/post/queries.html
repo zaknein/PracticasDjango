@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>yes en su nombre</h3>
+    <ul>
+        {% for name in filtro3%}
+        <li>{{name.name}} | {{name.email}}</li>
+        {% endfor %}
     <h3>id menor o igual a 15</h3>
     <ul>
         {% for mail in filtrados%}

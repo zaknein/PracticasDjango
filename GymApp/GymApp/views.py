@@ -1,4 +1,4 @@
 from django.http import HttpResponse
 
-def actividades(req: request):
+def actividades(request):
     return HttpResponse('vivee!')

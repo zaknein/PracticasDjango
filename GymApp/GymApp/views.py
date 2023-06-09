@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
-def actividades(request):
-    return HttpResponse('vivee!')
+def index(request):
+    return render(request,'index.html',{})

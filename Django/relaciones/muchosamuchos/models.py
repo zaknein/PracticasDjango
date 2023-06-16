@@ -17,7 +17,7 @@ class Articulo(models.Model):
     # solo necesita el modelo,
     # no es necesario un metodo de borrado, 
     # puesto que se crea una tercer table
-
+ 
 
     def __str__(self):
         return self.titular

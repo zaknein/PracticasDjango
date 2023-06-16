@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'onetoone',
     'muchosauno',
+    'muchosamuchos',
 ]
 
 MIDDLEWARE = [

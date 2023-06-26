@@ -9,21 +9,21 @@ class Salary(models.Model):
 class Job(models.Model):
     titulo = models.CharField(max_length=20, null=False)
     descripcion = models.TextField(max_length= 200)
-    salario = models.ForeignKey(Salary, on_delete=models.CASCADE)
+    salario = models.ManyToManyField(Salary)
 
 class Country(models.Model):
     nombre = models.CharField(max_length=20,null=False)
-    country_code = models.IntegerField(max_length=3, null = False)
+    country_code = models.IntegerField(null = False)
     
 class Location(models.Model):
     nombre = models.CharField(max_length=30, null=False)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    country = models.ManyToManyField(Country)
     
 class Place(models.Model):
     nombre = models.CharField(max_length=30, null=False)
     direccion = models.CharField(max_length=30, null= False)
-    codigo_postal = models.IntegerField(max_length=10)
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    codigo_postal = models.IntegerField()
+    location = models.ManyToManyField(Location)
     
 
 class Empleado(models.Model):
@@ -31,8 +31,8 @@ class Empleado(models.Model):
     apellido = models.CharField(max_length=20, null=False)
     email = models.EmailField(max_length=50)
     direccion = models.CharField(max_length=50, null=False)
-    job = models.ForeignKey(Job, on_delete= models.CASCADE)
-    place =models.ForeignKey(Place , on_delete=models.CASCADE)
+    job = models.ManyToManyField(Job)
+    place =models.ManyToManyField(Place)
 
     def __str__(self):
         return self.nombre

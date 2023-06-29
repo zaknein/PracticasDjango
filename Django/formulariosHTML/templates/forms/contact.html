@@ -1,0 +1,11 @@
+<form action=" {% url 'goal' %}" method="GET">
+    <!-- en GET se envia informacion que no es sensible,
+        es decir no contraseñas o cosas importantes. Porque se puede ver
+    POST es para el envio de informacion segura -->
+    <h3>Formulario de contacto</h3>
+    <label for="">Nombre: </label>
+    <input type="text" name = "name" placeholder="escribe tu nombre aqui...">
+    <label for="">Comentario</label>
+    <input type="text" name ="messege" placeholder="escribe tu comentario .">
+    <input type="submit" value="Enviar">
+</form>

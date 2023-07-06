@@ -1,0 +1,6 @@
+from django import forms
+
+class ComentForm(forms.Form):
+    name    = forms.CharField(label ='Escribe tu nombre')
+    url     = forms.URLField(label='Tu sitio web', required=False)
+    comment = forms.CharField()

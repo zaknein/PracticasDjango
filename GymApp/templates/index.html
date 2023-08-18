@@ -1,13 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>GymApp</title>
 </head>
+
 <body>
-    <h3> Index</h3>
-    <a href={% url "actividades" %}>Actividades</a>
+    
+    <div id="sector1">
+        
+        <div id="titulo">
+            <h1>Cositas</h1>
+        </div>
+        <div id="cositas">        
+            <p>
+                En esta GymApp vamos a agregar cositas, como formularios para armar rutina,
+                calculadora de IMC y videos explicativos. Esto es solo una prueba pero ahi vamos                
+            </p>
+        </div>
+    </div>
+    
+    <img id="buff" src="static\imagenes\fsa.png">
+    
 </body>
+
 </html>

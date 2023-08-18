@@ -1,0 +1,19 @@
+body{
+    color: aliceblue;
+    background-color: #55565b;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+#titulo{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#cositas{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
